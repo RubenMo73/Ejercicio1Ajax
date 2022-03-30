@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Ajax 1</title>
+	<script>
+	function llamarAJAX() 
+	 {
+	 	var ejer1=new XMLHttpRequest();
+	 	ejer1.onreadystatechange=function()
+	 	{
+	 		console.log("El readyState vale: "+ejer1.readyState);
+	 		if (ejer1.readyState==4 &&  ejer1.status==200)
+	 		{
+	 			document.getElementById("contenido").innerHTML=ejer1.responseText;
+	 		}
+	 	}
+	 	ejer1.open("GET", "ejer1");
+	 	ejer1.send();
+	 }
+	</script>
+</head>
+<body>
+<div id="contenido"></div>
+
+<input type="button" onclick="llamarAJAX();">
+
+</body>
+</html>
